@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCSharpLibraryProject", "SampleCSharpLibraryProject\SampleCSharpLibraryProject.csproj", "{78385A22-7744-46D0-B501-A44454C3BEB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCSharpLibraryProjectTest", "SampleCSharpLibraryProjectTest\SampleCSharpLibraryProjectTest.csproj", "{F9A61BC5-8A89-4F1F-BB45-96E6EA762D7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78385A22-7744-46D0-B501-A44454C3BEB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78385A22-7744-46D0-B501-A44454C3BEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78385A22-7744-46D0-B501-A44454C3BEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78385A22-7744-46D0-B501-A44454C3BEB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9A61BC5-8A89-4F1F-BB45-96E6EA762D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A61BC5-8A89-4F1F-BB45-96E6EA762D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A61BC5-8A89-4F1F-BB45-96E6EA762D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A61BC5-8A89-4F1F-BB45-96E6EA762D7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SampleCSharpLibraryProject\SampleCSharpLibraryProject.csproj
+	EndGlobalSection
+EndGlobal
