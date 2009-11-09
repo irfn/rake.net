@@ -1,17 +1,23 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe Project do
+  describe "should have attributes based on projects specification" do
+      before(:each) do
+        @projects = Solution.new("test_projects/SampleCSharpSolution/SampleCSharpSolution.sln").projects    
+      end
 
-  it 'should have attributes based on project specification' do
-    solution = Solution.new("test_projects/SampleCSharpSolution/SampleCSharpSolution.sln")
-    projects = solution.projects
-    projects.collect(&:assembly).should == ["SampleCSharpLibraryProject", "SampleCSharpLibraryProjectTest"]
-    projects.collect(&:assembly_type).should == ["Library", "Library"]
-    projects.select{|project| project.assembly == "SampleCSharpLibraryProjectTest"}.should be_test_assembly
-  end
+      it 'has assembly ' do
+        @projects.collect(&:assembly).should == ["SampleCSharpLibraryProject", "SampleCSharpLibraryProjectTest"]
+      end
 
-  it 'should have project types based on convention of Name ending with Test' do
-    pending
+      it 'has assembly_type' do
+        @projects.collect(&:assembly_type).should == ["Library", "Library"]
+      end
+
+      it 'is a test when reference to nunit found' do
+        @projects.select{|project| project.assembly == "SampleCSharpLibraryProject"}.first.should_not be_test
+        @projects.select{|project| project.assembly == "SampleCSharpLibraryProjectTest"}.first.should be_test
+      end
   end
 
 end
