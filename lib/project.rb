@@ -14,17 +14,25 @@ class Project
   def assembly
     xpath_node_value("//n:Project/n:PropertyGroup/n:AssemblyName")
   end
+  memoize :assembly
   
   def assembly_type
     xpath_node_value("//n:Project/n:PropertyGroup/n:OutputType")
   end
-  
-  def xpath_node_value(xpath)
-      @project_xml.xpath(xpath, MSBUILD_NAMESPACES ).first.text
-  end
+  memoize :assembly_type
   
   def test?
-    @project_xml.xpath("//n:Reference[contains(@Include,'nunit.framework')]", MSBUILD_NAMESPACES ).length > 0
+    xpath_nodes("//n:Reference[contains(@Include,'nunit.framework')]").length > 0
   end
-  memoize :assembly
+  memoize :test?
+  
+  private
+  def xpath_node_value(xpath)
+    xpath_nodes(xpath).first.text
+  end
+  
+  def xpath_nodes(xpath)
+    @project_xml.xpath(xpath, MSBUILD_NAMESPACES )
+  end       
+  
 end
